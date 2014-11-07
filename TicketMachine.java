@@ -109,4 +109,17 @@ public class TicketMachine
         amountLeftToPay=(price-balance);
         return amountLeftToPay;
     }
+    /**Metodo para vaciar de dinero la maquina
+     * y devuelva la cantida de dinero en maquina
+     * 
+     */
+    public int emptyMachine()
+    {
+        int amountToRefund;
+        amountToRefund = total;
+        total = 0 ;
+        return amountToRefund;
+    }  
 }
+
+
