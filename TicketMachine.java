@@ -36,16 +36,26 @@ public class TicketMachine
      */
      public void giveDiscount()   
     {
-        discount = !discount;
-        
-       
+        discount = !discount;               
     }    
-    /**
+    /**Metodo que devuelve el precio del billete
+     * Si hay descuento devuelve el nuevo precio
      * 
      */
     public int getPrice()
     {             
-           return price;           
+      if(discount == false)
+      {
+           return price;
+           
+      }
+      else
+      {
+           int newPrice;
+           newPrice = price - (price*10/100);
+           return newPrice;
+           
+      }                 
                       
     }
     
