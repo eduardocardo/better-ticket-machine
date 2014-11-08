@@ -28,7 +28,7 @@ public class TicketMachine
         price = cost;
         balance = 0;
         total = 0;
-       
+        discount = false;
     }
 
     /**
