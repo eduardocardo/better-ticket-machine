@@ -31,8 +31,17 @@ public class TicketMachine
         discount = false;
     }
 
+    /*
+     * Metodo para activar el descuento del billete
+     */
+     public void giveDiscount()   
+    {
+        discount = !discount;
+        
+       
+    }    
     /**
-     * @Return The price of a ticket.
+     * 
      */
     public int getPrice()
     {             
