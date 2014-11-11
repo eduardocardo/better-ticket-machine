@@ -23,12 +23,12 @@ public class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost,boolean giveDiscount)
     {
         price = cost;
         balance = 0;
         total = 0;
-        discount = false;
+        discount = giveDiscount;
     }
 
     /*
