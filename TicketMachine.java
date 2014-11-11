@@ -119,7 +119,12 @@ public class TicketMachine
                                amountLeftToPay + " more cents.");
             }
         }    
-       
+        else
+        {
+             //Si el descuento no esta activo imprime un mensaje
+             System.out.println("Esta maquina no imprime tickets con descuento");
+            
+        }    
     }
     /**
      *  Con el descuento desactivado imprime un ticket si la cantidad de dinero introducida es suficiente,y
