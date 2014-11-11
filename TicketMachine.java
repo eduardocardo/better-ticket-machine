@@ -88,37 +88,47 @@ public class TicketMachine
      * Con el descuento activado imprime un ticket si la cantidad de dinero introducida es suficiente,y
      * añade esa cantidad al total acumulado en la maquina.Cuando el dinero no es suficiente imprime un mensaje
      * de error indicando el dinero que se necesita.
-     * Con el descuento desactivado imprime un ticket si la cantidad de dinero introducida es suficiente,y
+     *Si el descuento no esta activado da un mensaje en pantalla indicandolo.
+     */
+    public void printTicketWithDiscount()
+    {
+        int newPrice;
+        newPrice = price - (price*10/100);
+        if(discount == true)  
+        {
+            if( balance>=newPrice)
+            {
+                // Simulate the printing of a ticket.
+                System.out.println("##################");
+                System.out.println("# The BlueJ Line");
+                System.out.println("# Ticket");
+                System.out.println("# " + newPrice + " cents.");
+                System.out.println("##################");
+                System.out.println();
+
+                // Update the total collected with the newPrice.
+                total = total + newPrice;
+                // Reduce the balance by the newPrince.
+                balance = balance - newPrice;
+            }
+            else
+            {
+                int amountLeftToPay;
+                amountLeftToPay = (newPrice - balance);
+                System.out.println("You must insert at least: " +
+                               amountLeftToPay + " more cents.");
+            }
+        }    
+       
+    }
+    /**
+     *  Con el descuento desactivado imprime un ticket si la cantidad de dinero introducida es suficiente,y
      * añade esa cantidad al total acumulado en la maquina.Cuando el dinero no es suficiente imprime un mensaje
      * de error indicando el dinero que se necesita.
      */
     public void printTicket()
     {
-        int newPrice;
-        newPrice = price - (price*10/100);
-        if(discount == true && balance>=newPrice)
-        {
-         // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + newPrice + " cents.");
-            System.out.println("##################");
-            System.out.println();
-
-            // Update the total collected with the newPrice.
-            total = total + newPrice;
-            // Reduce the balance by the newPrince.
-            balance = balance - newPrice;
-        }
-        else if(discount == true && balance<newPrice)
-        {
-            int amountLeftToPay;
-            amountLeftToPay = (newPrice - balance);
-            System.out.println("You must insert at least: " +
-                               amountLeftToPay + " more cents.");
-        } 
-        else if (discount == false && balance>=price)
+        if(balance>=price)
         {
             
              // Simulate the printing of a ticket.
